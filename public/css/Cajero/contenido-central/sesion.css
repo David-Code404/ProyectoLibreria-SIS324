@@ -1,0 +1,18 @@
+
+/* <!------------------------------id="cesion"---------------------------------> */
+
+#cesion button {
+    background-color: #00b9f3; /* Color del botón */
+    color: white;
+    padding: 12px 24px; /* Aumentar el padding para un aspecto más espaciado */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s; /* Agregar transición al cambio de color */
+}
+
+#cesion button:hover {
+    background-color: #009ac6; /* Cambiar el color al pasar el mouse */
+}
+

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cajero - Heladería Copilay</title>
+    <link rel="stylesheet" href="/css/Cajero/cajero.css">
+    <link rel="stylesheet" href="/css/Cajero/menu-bar.css">
+    <link rel="stylesheet" href="/css/Cajero/contenido-central.css">
+    <link rel="stylesheet" href="/css/Cajero/order-section.css">
+</head>
+
+<body>
+<!---------------------------------------------------------------menu-bar-------------------------------------------------------------------------------->
+    <div class="menu-bar">
+
+
+        <!-- Título de la heladería -->
+        <h1>Heladería Copilay</h1>
+
+        <!-- Menú de navegación -->
+        <ul>
+<!------------------------Seccion de Inicio-------------------------->
+            <li>
+                <a href="#" onclick="mostrarContenido('inicio')">
+                    <!-- Icono SVG -->
+                    <img src="/ico/inicio.svg" alt="Icono de Inicio"> 
+                    &nbsp;&nbsp;&nbsp;Inicio
+                </a>
+            </li>
+
+<!------------------------Seccion de Inicio-------------------------->
+            <li>
+                <a href="#" onclick="mostrarContenido('ordenes')">
+                    <!-- Icono SVG -->
+                    <img src="/ico/ordenes.svg" alt="Icono de Ordenes"> 
+                    &nbsp;&nbsp;&nbsp;Órdenes
+                </a>
+            </li>
+
+<!------------------------Seccion de Inicio-------------------------->
+            <li>
+                <a href="#" onclick="mostrarContenido('historial')">
+                    <!-- Icono SVG -->
+                    <img src="/ico/historial.svg" alt="Icono de Historial">
+                    &nbsp;&nbsp;&nbsp;Historial
+                </a>
+            </li>
+
+<!------------------------Seccion de Inicio-------------------------->
+            <li>
+                <a href="#" onclick="mostrarContenido('cesion')">
+                    <!-- Icono SVG -->
+                    <img src="/ico/cesion.svg" alt="Icono de Cesión">
+                    &nbsp;&nbsp;&nbsp;Cesión
+                </a>
+            </li>
+        </ul>
+
+
+    </div>
+
+<!-----------------------------------------------------------contenido-central--------------------------------------------------------------------------->
+
+<!-------------------------------------------------------------order-section----------------------------------------------------------------------------->
+    <div class="order-section">
+
+
+<!------------Contenido de Información de Usuario------------------->
+        <div class="info-usuario">
+
+
+            <!-- Iniciales del usuario, cargo y nombre -->
+            <div class="iniciales-usuario" id="iniciales-usuario"></div>
+
+            <!-- Cargo y nombre del usuario -->
+            <h3 id="cargo-usuario"></h3>
+            <p>:</p>
+            <img src="/ico/user.svg" alt="Icono de Usuario">
+            <h4 id="nombre-usuario"></h4>
+
+
+        </div>
+
+        <div class="linea-horizontal-1"></div>
+
+<!-------------------Contenido de Ordenes--------------------------->
+        <div class="ordenes">
+
+            <!-- Título de la sección -->
+            <h3>Órdenes:</h3>
+
+            <!-- Lista de pedidos -->
+            <ul class="lista-pedidos" id="lista-pedidos">
+                <!-- Aquí se agregarán dinámicamente los elementos de la lista de pedidos -->
+            </ul>
+
+
+        </div>
+
+        <div class="linea-horizontal-2"></div>
+
+<!--------------------Contenido de Total---------------------------->
+        <div class="total">
+
+
+            <!-- Primera fila: Número de items y subtotal -->
+            <div class="total-row">
+                <div class="item-count">items: <span id="item-count">0</span></div>
+                <div class="subtotal">Subtotal: <span id="subtotal">$00.00</span></div>
+            </div>
+
+            <!-- Segunda fila: Descuento -->
+            <div class="total-row">
+                <label for="descuento">Descuento:  </label>
+                <div class="dropdown">
+                    <button class="dropbtn" id="dropbtn">0%</button>
+                    <div class="dropdown-content" id="myDropdown">
+                        <a href="#">0%</a>
+                        <a href="#">10%</a>
+                        <a href="#">15%</a>
+                        <a href="#">50%</a>
+                        <a href="#">100%</a>
+                    </div>
+                </div>
+                <button class="aplicar-descuento">Aplicar descuento</button>
+            </div>
+
+            <!-- Tercera fila: Total absoluto -->
+            <div class="total-row">
+                <div class="total-amount">Total a pagar: <span id="total-amount">$00.00</span></div>
+            </div>
+
+            <!-- Cuarta fila: Botones -->
+            <button class="boton-borrar">
+                <img src="/ico/basurero.svg" alt="Icono Borrar">
+            </button>
+
+            <button class="boton-pedido">
+                Hacer Pedido
+                <img src="/ico/next.svg" alt="Icono Borrar">
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+<!---------------------------------------------------------------cajero-js------------------------------------------------------------------------------>
+    <script src="/js/Cajero/cajero.js"></script>
+    <script src="/js/Cajero/menu-bar.js"></script>
+    <script src="/js/Cajero/contenido-central.js"></script>
+    <script src="/js/Cajero/order-section.js"></script>
+
+</body>
+
+</html>

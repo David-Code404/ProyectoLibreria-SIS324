@@ -1,0 +1,177 @@
+
+/* <!---------------------------------------------class="total"-------------------------------------------------> */
+.total {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para las filas dentro del contenedor principal */
+.total-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Alinea los elementos al inicio y al final */
+    margin-bottom: 15px;
+}
+
+
+
+
+
+
+/* <!---------Primera fila: Número de items y subtotal-------------> */
+.item-count{
+    font-size: 16px;
+    color: #333;
+}
+.subtotal {
+    font-size: 16px;
+    color: #333;
+    /*poner el texto a la derecha*/
+}
+
+.item-count span,
+.subtotal span {
+    font-weight: bold;
+    color: #555;
+}
+
+
+
+
+
+
+/* <!--------------------Segunda fila: Descuento------------------> */
+.dropdown {
+    position: relative; 
+}
+/* <-----BOTON DESPLEGABLE-----> */
+.dropbtn {
+    background-color: #ececec;
+    color: red;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    /* peso de la fuente */
+    font-weight: bold;
+    margin-right: 30px;
+}
+.dropdown:hover .dropbtn {
+    background-color: #ececec;
+}
+/* <-----LO QUE SE DESPLIEGA-----> */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+    bottom: 100%; /* Cambia la posición del menú desplegable hacia arriba */
+    margin-right: 30px;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {background-color: #e8e8e8;}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+/* <-----BOTON APLICAR DESCUENTO-----> */
+.aplicar-descuento {
+    background-color: #ff3434;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.aplicar-descuento:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+
+
+/* <!----------------- Tercera fila: Total absoluto-------------------> */
+/* Estilos para el total absoluto */
+.total-amount {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.total-amount span {
+    color: #000000;
+    margin-left: 160px;
+}
+
+
+
+
+
+/* <!------------------Cuarta fila: Botones-------------------> */
+/* Estilos para el botón "Borrar" */
+.boton-borrar {
+    background-color: #ff3434;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+/* Estilos para el icono dentro del botón "Borrar" */
+.boton-borrar img {
+    width: 20px;
+    vertical-align: middle;
+}
+
+/* Estilos para el botón "Hacer Pedido" */
+.boton-pedido {
+    background-color: #4cd0bb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 80px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    float: right;
+}
+
+/* Estilos para el icono dentro del botón "Hacer Pedido" */
+.boton-pedido img {
+    width: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Estilos para los botones al pasar el mouse */
+.boton-borrar:hover {
+    background-color: #ab2424;
+}
+
+.boton-pedido:hover {
+    background-color: #3fad9b;
+}

@@ -1,0 +1,34 @@
+
+/* <!--------------------------id="tablaHistorial"-----------------------------> */
+table {
+    width: 100%; /* Ancho completo */
+    border-collapse: separate; /* Separar bordes */
+    border-spacing: 0; /* Espacio entre bordes */
+    margin-top: 20px; /* Margen superior */
+    border-radius: 10px; /* Esquinas redondeadas */
+    overflow: hidden; /* Ocultar cualquier contenido que se desborde */
+    background-color: white; /* Color de fondo */
+}
+
+/* Estilos para las celdas de la tabla */
+th, td {
+    padding: 15px; /* Espaciado interno */
+    text-align: left; /* Alineación a la izquierda */
+    border-bottom: 1px solid #ddd; /* Borde inferior de 1 píxel */
+}
+
+/* Estilos para el encabezado de la tabla */
+th {
+    background-color: #1e90ff; /* Azul medio */
+    color: white;
+}
+
+/* Estilos para el texto alineado a la derecha en la última columna (Total) */
+td:last-child {
+    text-align: right; /* Alineación a la derecha */
+}
+
+/* Estilos para oscurecer todas las filas al pasar el cursor sobre cualquier celda */
+tbody tr:hover td {
+    background-color: #f0f0f0; /* Color de fondo ligeramente oscurecido */
+}

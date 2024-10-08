@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <link rel="stylesheet" href="/css/Cajero/cajero.css">
+    <!--Menu-bar-->
+    <link rel="stylesheet" href="/css/Cajero/menu-bar.css">
+
+    <!--Contenido-central-->
+    <link rel="stylesheet" href="/css/Cajero/contenido-central/contenido-central.css">
+    <link rel="stylesheet" href="/css/Cajero/contenido-central/inicio.css">
+    <link rel="stylesheet" href="/css/Cajero/contenido-central/historial.css">
+    <link rel="stylesheet" href="/css/Cajero/contenido-central/sesion.css">
+
+    <!--Order-section-->
+    <link rel="stylesheet" href="/css/Cajero/order-section/order-section.css">
+    <link rel="stylesheet" href="/css/Cajero/order-section/info-usuario.css">
+    <link rel="stylesheet" href="/css/Cajero/order-section/ordenes.css">
+    <link rel="stylesheet" href="/css/Cajero/order-section/total.css">
+
+</head>
+
+<body>
+    <!---------------------------------------------------------------menu-bar-------------------------------------------------------------------------------->
+    <nav class="menu-bar">
+
+        <header>
+            <div class="header-content">
+                <div class="logo">HC</div>
+
+                <div class="titulo">
+                    <div class="negocio">Heladería</div>
+                    <div class="nombre">Sucré</div>
+                </div>
+            </div>
+            <button id="toggle-sidebar-button">
+                <img src="/ico/toggle-sidebar-button.svg" alt="Icono Minimizar/Agrandar">
+            </button>
+        </header>
+
+        <div class="menu-navigation">
+            <ul class="menu-links">
+                <li class="nav-link">
+                    <a href="#inicio" onclick="mostrarContenido('inicio')">
+                        <div class="link-content">
+                            <img class="nav-logo" src="/ico/inicio.svg" alt="Icono de Inicio">
+                            <span class="nav-text">Inicio</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-link">
+                    <a href="#ordenes" onclick="mostrarContenido('ordenes')">
+                        <div class="link-content">
+                            <img class="nav-logo" src="/ico/ordenes.svg" alt="Icono de Ordenes">
+                            <span class="nav-text">Ordenes</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-link">
+                    <a href="#historial" onclick="mostrarContenido('historial')">
+                        <div class="link-content">
+                            <img class="nav-logo" src="/ico/historial.svg" alt="Icono de Historial">
+                            <span class="nav-text">Historial</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-link">
+                    <a href="#cesion" onclick="mostrarContenido('cesion')">
+                        <div class="link-content">
+                            <img class="nav-logo" src="/ico/cesion.svg" alt="Icono de Cesión">
+                            <span class="nav-text">Cesión</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-----------------------------------------------------------contenido-central--------------------------------------------------------------------------->
+    <div class="contenido-central">
+
+
+        <!-----------------------Contenido de Inicio------------------------->
+        <div id="inicio" class="contenido-seccion">
+
+
+            <!----------Título sección------------------->
+            <h2>Bienvenido al sistema de gestión de la Heladería Copilay</h2>
+
+            <!----------Descripción de la sección-------->
+            <p>Este sistema te permite gestionar las diferentes actividades relacionadas con la heladería, incluyendo el
+                registro de pedidos, seguimiento de historial y gestión de sesiones.</p>
+
+            <!----------Navigation Menu Bar horizontal -->
+            <nav class="horizontal-menu">
+                <ul>
+                    <li><a href="#">Todos</a></li>
+                    <li><a href="#">Clasicos</a></li>
+                    <li><a href="#">Ediciones Limitadas</a></li>
+                    <li><a href="#">Especiales</a></li>
+                    <li><a href="#">Exoticos</a></li>
+                    <li><a href="#">Frutas</a></li>
+                    <li><a href="#">Nueces y Frutos Secos</a></li>
+                    <!-- Puedes agregar más secciones aquí -->
+                </ul>
+            </nav>
+
+            <!----------Cuadros de productos------------->
+            <div id="productos-container">
+                <!-- Aquí se cargarán los productos -->
+            </div>
+
+
+        </div>
+
+        <!----------------------Contenido de Órdenes------------------------->
+        <div id="ordenes" class="contenido-seccion oculto">
+
+
+            <!----------Título sección------------------->
+            <h2>Órdenes</h2>
+
+            <!----------Descripción de la sección-------->
+            <p>Aquí podrás registrar los pedidos realizados por los clientes. Puedes agregar nuevos pedidos, modificar
+                los existentes y eliminarlos si es necesario.</p>
+
+
+        </div>
+
+        <!---------------------Contenido de Historial------------------------>
+        <div id="historial" class="contenido-seccion oculto">
+
+
+            <!----------Título sección------------------->
+            <h2>Historial</h2>
+
+            <!----------Descripción de la sección-------->
+            <p>En esta sección encontrarás el historial de pedidos realizados. Puedes buscar pedidos anteriores, ver
+                detalles de cada pedido y generar informes de ventas.</p>
+
+            <!----------Tabla de historial---------------->
+            <table id="tablaHistorial">
+                <thead>
+                    <tr>
+                        <th>Número de Orden</th>
+                        <th>Fecha de Orden</th>
+                        <th>Atendido por</th>
+                        <th>Pedidos</th>
+                        <th>Precio Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Los datos se cargarán dinámicamente mediante JavaScript -->
+                </tbody>
+            </table>
+
+
+        </div>
+
+        <!----------------------Contenido de Cesión-------------------------->
+        <div id="cesion" class="contenido-seccion oculto">
+
+
+            <!----------Título sección------------------->
+            <h2>Cesión</h2>
+
+            <!----------Descripción de la sección-------->
+            <p>Esta sección te permite gestionar la sesión actual. Puedes cerrar la sesión si es necesario y cambiar al
+                usuario que está utilizando el sistema.</p>
+
+            <!----------Botón de cerrar sesión------------>
+            <button onclick="cerrarSesion()">Cerrar sesión</button>
+
+
+        </div>
+
+
+    </div>
+
+    <!-------------------------------------------------------------order-section----------------------------------------------------------------------------->
+    <div class="order-section">
+
+
+        <!------------Contenido de Información de Usuario------------------->
+        <div class="info-usuario">
+
+            <!----------Iniciales del usuario--------------->
+            <div class="iniciales-usuario" id="iniciales-usuario"></div>
+
+            <!----------Cargo y Nombre del usuario---------->
+            <h3 id="cargo-usuario"></h3>
+            <p>:</p>
+            <img src="/ico/user.svg" alt="Icono de Usuario">
+            <h4 id="nombre-usuario"></h4>
+
+
+        </div>
+
+        <!---------------------Linea-horizontal-1--------------------------->
+        <div class="linea-horizontal-1"></div>
+
+        <!-------------------Contenido de Ordenes--------------------------->
+        <div class="ordenes">
+
+            <!----------Título de la sección--------------->
+            <h3>Órdenes:</h3>
+
+            <!----------Lista de pedidos------------------->
+            <ul class="lista-pedidos" id="lista-pedidos">
+                <!-- Aquí se agregarán dinámicamente los elementos de la lista de pedidos -->
+            </ul>
+
+
+        </div>
+
+        <!---------------------Linea-horizontal-2--------------------------->
+        <div class="linea-horizontal-2"></div>
+
+        <!--------------------Contenido de Total---------------------------->
+        <div class="total">
+
+
+            <!-- Primera fila: Número de items y subtotal -->
+            <div class="total-row">
+                <div class="item-count">items: <span id="item-count">0</span></div>
+                <div class="subtotal">Subtotal: <span id="subtotal">$00.00</span></div>
+            </div>
+
+            <!-- Segunda fila: Descuento -->
+            <div class="total-row">
+                <label for="descuento">Descuento: </label>
+                <div class="dropdown">
+                    <button class="dropbtn" id="dropbtn">0%</button>
+                    <div class="dropdown-content" id="myDropdown">
+                        <a href="#">0%</a>
+                        <a href="#">10%</a>
+                        <a href="#">15%</a>
+                        <a href="#">50%</a>
+                        <a href="#">100%</a>
+                    </div>
+                </div>
+                <button class="aplicar-descuento">Aplicar descuento</button>
+            </div>
+
+            <!-- Tercera fila: Total absoluto -->
+            <div class="total-row">
+                <div class="total-amount">Total a pagar: <span id="total-amount">$00.00</span></div>
+            </div>
+
+            <!-- Cuarta fila: Botones -->
+            <button class="boton-borrar">
+                <img src="/ico/basurero.svg" alt="Icono Borrar">
+            </button>
+
+
+
+            <button class="boton-pedido">
+                Hacer Pedido
+                <img src="/ico/next.svg" alt="Icono Borrar">
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+    <!---------------------------------------------------------------cajero-js------------------------------------------------------------------------------>
+
+    <!--Menu-bar-->
+    <script src="/js/Cajero/menu-bar.js"></script>
+    <!--Contenido-central-->
+    <script src="/js/Cajero/contenido-central/inicio.js"></script>
+    <script src="/js/Cajero/contenido-central/historial.js"></script>
+
+    <!--Order-section-->
+    <script src="/js/Cajero/order-section/info-usuario.js"></script>
+    <script src="/js/Cajero/order-section/ordenes-total.js"></script>
+
+</body>
+
+</html>

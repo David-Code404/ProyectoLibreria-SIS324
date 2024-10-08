@@ -1,0 +1,51 @@
+Libreria_Express_SQLITE3
+  node_modules
+    bin
+    ...
+  public
+    css
+      login.css
+    ico
+      cesion.svg
+      historial.svg
+      inicio.svg
+      pedidos.svg
+    img
+      helado_chocolate.jpg
+      helado_fresa.jpg
+      helado_nuez.jpg
+      helado_vainilla.jpg
+    js
+      login.js
+    index.html
+  src
+    db
+      db.js
+    routes
+      api.js
+    views
+      app.js
+      sever.js
+  heladeria_copilay.db
+  package-lock.json
+  packege.json
+  README.md
+
+
+node_modules/: Directorio donde se instalan las dependencias del proyecto mediante npm (Node Package Manager).
+public/: Directorio que contiene archivos estáticos (como CSS, JavaScript, imágenes, etc.) que se servirán públicamente.
+css/: Directorio que contiene archivos CSS para estilos de la aplicación, incluyendo estilos específicos para diferentes páginas como el cajero.
+ico/: Directorio que contiene archivos de iconos en formato SVG.
+js/: Directorio que contiene archivos JavaScript para la lógica de la aplicación, incluyendo scripts específicos para diferentes páginas como el cajero y el login.
+administrador.html: Página HTML específica para el rol de administrador.
+cajero.html: Página HTML específica para el rol de cajero.
+index.html: Página HTML de inicio o página principal de la aplicación.
+mesero.html: Página HTML específica para el rol de mesero.
+src/: Directorio que contiene el código fuente de la aplicación.
+db/: Directorio que contiene el archivo db.js, el cual maneja la conexión a la base de datos SQLite.
+routes/: Directorio que contiene el archivo api.js, el cual define las rutas de la API de la aplicación.
+views/: Directorio que contiene archivos JavaScript para la lógica de visualización de la aplicación, incluyendo el archivo server.js que configura y ejecuta el servidor Express.
+heladeria_copilay.db: Archivo de base de datos SQLite que contiene los datos de la aplicación.
+package.json: Archivo de configuración de npm que incluye metadatos sobre el proyecto y sus dependencias.
+package-lock.json: Archivo generado automáticamente por npm para mantener un registro de las versiones exactas de las dependencias instaladas.
+README.md: Archivo de markdown que proporciona información y documentación sobre el proyecto.

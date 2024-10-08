@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="/css/login.css">
+    
+</head>
+
+<body>
+    <!--------------------------------Título de la heladería--------------------------------->
+    <header>
+        <div >
+            <div >
+                <div>LIBRERIA</div>
+            </div>
+        </div>
+    </header>
+
+    <!--------------------------------class="login-container"-------------------------------->
+    <main>
+        <div class="login-container">
+
+            <!------------------Título del Login----------------------->
+            <div class="login-title-container">
+                <h2 style="display: flex; justify-content: center;">Iniciar Sesión</h2>
+            </div>
+
+            <!-----------------Formulario del Login-------------------->
+            <form class="login-form" id="login-form">
+
+                <!-- Campo para ingresar el número de empleado -->
+                <label for="pin">PIN:</label>
+
+                <!-- Campo para ingresar el PIN -->
+                <input placeholder="Ingrese su PIN" type="password" class="pin" id="pin" name="pin" maxlength="4"
+                    pattern="\d{4}" required autocomplete="off">
+
+                <!-- Mensaje de error -->
+                <p id="error-message"></p>
+
+                <!-- Botón para enviar el formulario -->
+                <button type="submit">Ingresar</button>
+
+            </form>
+
+        </div>
+    </main>
+
+    <!-----------------------------------Pie de página--------------------------------------->
+    <footer>
+        <p>&copy; 2024 Libreria. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-------------------------------------login.js------------------------------------------>
+    <script src="/js/login.js"></script>
+</body>
+
+</html>

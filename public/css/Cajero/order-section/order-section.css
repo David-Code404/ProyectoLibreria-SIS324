@@ -1,0 +1,54 @@
+/* <!-----------------------------------------------class="order-section"-------------------------------------------------------> */
+.order-section {
+    position: fixed; /* Fijar el sector en la posición */
+    top: 0; /* Alinear el sector en la parte superior */
+    right: 0; /* Alinear el sector en la parte derecha */
+    height: 100%; /* Altura del sector ocupando toda la altura disponible */
+    width: 400px; /* Ancho del sector de la orden */
+    background-color: #fff; /* Color de fondo */
+    
+    padding: 20px; /* Espaciado interno */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+    overflow-y: auto; /* Agregar desplazamiento vertical si el contenido es demasiado largo */
+}
+
+
+
+
+
+
+
+
+
+
+
+/* <!--------------------------------------class="linea-horizontal-1"-------------------------------------------> */
+.linea-horizontal-1 {
+    border-top: 1px solid #ccc; /* Línea horizontal */
+    margin-top: 10px; /* Espacio entre líneas */
+    margin-bottom: 10px; /* Espacio entre líneas */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* <!--------------------------------------class="linea-horizontal-2"-------------------------------------------> */
+.linea-horizontal-2 {
+    border-top: 1px solid #ccc; /* Línea horizontal */
+    margin-top: 10px; /* Espacio entre líneas */
+    margin-bottom: 10px; /* Espacio entre líneas */
+}
+
+
+
+
+

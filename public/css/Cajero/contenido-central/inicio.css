@@ -1,0 +1,112 @@
+/* Estilos para el Navigation Menu Bar horizontal */
+.horizontal-menu {
+    display: flex; /* Utilizar flexbox para alinear elementos en una fila */
+    justify-content: flex-start; /* Alinear elementos al principio del contenedor */
+    margin: 30px 0; /* Márgenes superior e inferior */
+    overflow-x: auto; /* Permitir desplazamiento horizontal en caso de muchos elementos */
+}
+
+.horizontal-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.horizontal-menu li {
+    display: inline-block;
+    margin-right: 10px; /* Espaciado entre elementos */
+}
+
+.horizontal-menu li:last-child {
+    margin-right: 0; /* Eliminar margen derecho del último elemento */
+}
+
+.horizontal-menu li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #575757;
+    background-color: #faf8ff;
+    border-radius: 25px; /* Aumentar el radio para bordes más redondeados */
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.horizontal-menu li a:hover {
+    background-color: #ccb3f8;
+    transform: translateY(-3px); /* Efecto de elevación al pasar el mouse */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* <!------------------------id="productos-container"--------------------------> */
+#productos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Columnas dinámicas con un ancho mínimo de 200px */
+    gap: 30px; /* Espacio entre las tarjetas de productos */
+    justify-content: center; /* Centra los productos horizontalmente */
+}
+
+/* <!-------class="producto"-(creado con el js)----------> */
+.producto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    width: 220px; /* Tamaño único para todos los productos */
+    height: 250px; /* Altura única para todos los productos */
+    border-radius: 10px;
+    overflow: hidden; /* Evita que el contenido desborde */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    transition: transform 0.3s ease;
+    border: 2px solid transparent; /* Agrega un borde transparente */
+}
+
+.producto:hover {
+    border-color: #3f508d; /* Cambia el color del borde al pasar el ratón */
+}
+/* <!-------creado con el js----------> */
+.producto img {
+    width: 200px; /* Ancho del 100% del contenedor */
+    height: 160px; /* Altura automática para mantener la proporción */
+    border-radius: 10px 10px 10px 10px; /* Bordes redondeados */
+    object-fit: cover; /* Ajusta la imagen dentro del contenedor sin deformarla */
+    margin-bottom: 20px; /* Margen inferior */
+}
+
+/* <!-------creado con el js----------> */
+
+.producto h4,
+.producto p {
+    margin: 0;
+}
+
+.producto h4 {
+    color: #333333;
+    font-size: 18px;
+}
+
+.producto p {
+    color: #666666;
+    font-size: 16px;
+}

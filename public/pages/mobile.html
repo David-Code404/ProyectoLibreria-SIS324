@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heladería Copilay - Iniciar Sesión (Móvil)</title>
+    <link rel="stylesheet" href="/css/mobile.css">
+</head>
+
+<body>
+    
+    <header>
+        <div class="header-content">
+            <div class="logo">HC</div>
+
+            <div class="titulo">
+                <div class="negocio">Heladería</div>
+                <div class="nombre">Copilay</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="login-container"> 
+
+        <div class="login-title-container">
+            <h2>Iniciar Sesión</h2>
+        </div>
+
+        <form class="login-form" id="login-form">
+            <label for="pin">PIN:</label>
+            <!-- Limitar la cantidad de caracteres a 4 -->
+            <input placeholder="Ingrese su PIN" type="number" class="pin" id="pin" name="pin" min="0" max="9999" required autocomplete="off" readonly>
+
+
+            <p id="error-message"></p>
+
+            <!-- Botones numéricos -->
+            <div class="numeric-buttons">
+                <button type="button" class="numeric-button" value="1">1</button>
+                <button type="button" class="numeric-button" value="2">2</button>
+                <button type="button" class="numeric-button" value="3">3</button>
+                <button type="button" class="numeric-button" value="4">4</button>
+                <button type="button" class="numeric-button" value="5">5</button>
+                <button type="button" class="numeric-button" value="6">6</button>
+                <button type="button" class="numeric-button" value="7">7</button>
+                <button type="button" class="numeric-button" value="8">8</button>
+                <button type="button" class="numeric-button" value="9">9</button>
+                <button type="button" class="numeric-button empty-button" disabled></button> <!-- Botón vacío -->
+                <button type="button" class="numeric-button" value="0">0</button>
+                <button type="button" class="numeric-button delete-button">DEL</button> <!-- Botón de borrar -->
+            </div>
+            
+
+            <button type="submit">Ingresar</button>
+        </form>
+
+        <!-----------------------------------Pie de página--------------------------------------->
+        <footer>
+            <p>&copy; 2024 Heladería Copilay. Todos los derechos reservados.</p>
+        </footer>
+
+    </div>
+
+    <script src="/js/mobile.js"></script>
+</body>
+</html>
