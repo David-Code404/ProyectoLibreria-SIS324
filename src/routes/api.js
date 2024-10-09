@@ -27,7 +27,7 @@ router.post('/login', (req, res) => {
                     tipo: row.tipo_usuario
                 };
                 res.status(200).json({ success: true, userData, redirectURL: `/pages/administrador.html` });
-            } else if (row.tipo_usuario === 'Cajero') {
+            } else if (row.tipo_usuario === 'Vendedor') {
                 // Obtener más información del usuario si es necesario
                 const userData = {
                     id: row.id_usuario,
@@ -35,7 +35,7 @@ router.post('/login', (req, res) => {
                     email: row.email,
                     tipo: row.tipo_usuario
                 };
-                res.status(200).json({ success: true, userData, redirectURL: `/pages/cajero.html` });
+                res.status(200).json({ success: true, userData, redirectURL: `/pages/Home.html` });
             } else if (row.tipo_usuario === 'Mesero') {
                 // Obtener más información del usuario si es necesario
                 const userData = {

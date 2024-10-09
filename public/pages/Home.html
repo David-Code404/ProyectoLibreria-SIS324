@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Librería Escolar</title>
+
+    <link rel="stylesheet" href="/css/Home/Home.css" />
+    <!--Menu-bar-->
+    <link rel="stylesheet" href="/css/Home/menu-bar.css" />
+
+    <!--Contenido-central-->
+    <link
+      rel="stylesheet"
+      href="/css/Home/contenido-central/contenido-central.css"
+    />
+    <link rel="stylesheet" href="/css/Home/contenido-central/inicio.css" />
+    <link rel="stylesheet" href="/css/Home/contenido-central/categorias.css" />
+
+    <!--Order-section-->
+    <link rel="stylesheet" href="/css/Home/order-section/order-section.css" />
+    <link rel="stylesheet" href="/css/Home/order-section/info-usuario.css" />
+  </head>
+
+  <body>
+    <!---------------------------------------------------------------menu-bar-------------------------------------------------------------------------------->
+    <nav class="menu-bar">
+      <header>
+        <div class="header-content">
+          <div class="logo">LE</div>
+
+          <div class="titulo">
+            <div class="negocio">Librería</div>
+            <div class="nombre">Escolar</div>
+          </div>
+        </div>
+        <button id="toggle-sidebar-button">
+          <img
+            src="/ico/toggle-sidebar-button.svg"
+            alt="Icono Minimizar/Agrandar"
+          />
+        </button>
+      </header>
+
+      <div class="menu-navigation">
+        <ul class="menu-links">
+          <li class="nav-link">
+            <a href="#inicio" onclick="mostrarContenido('inicio')">
+              <div class="link-content">
+                <img
+                  class="nav-logo"
+                  src="/ico/inicio.svg"
+                  alt="Icono de Inicio"
+                />
+                <span class="nav-text">Inicio</span>
+              </div>
+            </a>
+          </li>
+          <li class="nav-link">
+            <a href="#categorias" onclick="mostrarContenido('categorias')">
+              <div class="link-content">
+                <img
+                  class="nav-logo"
+                  src="/ico/categoria.jpg"
+                  alt="Icono de Categorías"
+                />
+                <span class="nav-text">Categorías</span>
+              </div>
+            </a>
+          </li>
+
+          <li class="nav-link">
+            <a href="#sesion" onclick="mostrarContenido('sesion')">
+              <div class="link-content">
+                <img
+                  class="nav-logo"
+                  src="/ico/cesion.svg"
+                  alt="Icono de Sesión"
+                />
+                <span class="nav-text">Sesión</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-----------------------------------------------------------contenido-central--------------------------------------------------------------------------->
+
+    <div class="contenido-central">
+      <!-----------------------Contenido de Inicio------------------------->
+
+      <div id="inicio" class="contenido-seccion">
+        <h2>Bienvenido al sistema de gestión de la Librería Escolar</h2>
+        <p>
+          Este sistema te permite gestionar las diferentes actividades
+          relacionadas con la librería, incluyendo el registro de pedidos,
+          historial y la gestión de categorías.
+        </p>
+      </div>
+
+      <!----------------------Contenido de Categorías------------------------->
+
+      <div id="categorias" class="contenido-seccion oculto">
+        <h2>Categorías</h2>
+        <p>
+          Aquí puedes ver las diferentes categorías de materiales disponibles en
+          la librería escolar.
+        </p>
+
+        <!-- Formulario de búsqueda -->
+        <form id="buscar-categoria" action="#" method="GET">
+          <input
+            type="text"
+            placeholder="Buscar categoría..."
+            name="categoria"
+          />
+          <button type="submit">Buscar</button>
+        </form>
+
+        <nav class="horizontal-menu">
+          <ul>
+            <li><a href="#">Libros de Texto</a></li>
+            <li><a href="#">Útiles Escolares</a></li>
+            <li><a href="#">Papelería</a></li>
+            <li><a href="#">Arte y Manualidades</a></li>
+            <li><a href="#">Tecnología</a></li>
+          </ul>
+        </nav>
+
+        <!-- Resultados de búsqueda -->
+        <div id="resultados-busqueda">
+          <h3>Resultados de la Búsqueda:</h3>
+          <ul id="lista-resultados">
+            <!-- Aquí se agregarán los resultados de búsqueda -->
+          </ul>
+        </div>
+      </div>
+
+      <!----------------------Contenido de Sesión-------------------------->
+
+      <div id="sesion" class="contenido-seccion oculto">
+        <h2>Sesión</h2>
+        <p>Gestiona la sesión actual y cambia de usuario si es necesario.</p>
+        <button onclick="cerrarSesion()">Cerrar sesión</button>
+      </div>
+    </div>
+
+    <!--Menu-bar-->
+    <script src="/js/Home/menu-bar.js"></script>
+    <!--Contenido-central-->
+    <script src="/js/Home/contenido-central/categorias.js"></script>
+
+    <!--Order-section-->
+    <script src="/js/Home/order-section/info-usuario.js"></script>
+    <script src="/js/Home/order-section/ordenes-total.js"></script>
+    <script>
+      document
+        .getElementById("buscar-categoria")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const categoriaBuscada = event.target.categoria.value.toLowerCase();
+          const listaCategorias = [
+            "libros de texto",
+            "útiles escolares",
+            "papelería",
+            "arte y manualidades",
+            "tecnología",
+          ];
+          const resultados = listaCategorias.filter((categoria) =>
+            categoria.toLowerCase().includes(categoriaBuscada)
+          );
+
+          // Mostrar resultados
+          const listaResultados = document.getElementById("lista-resultados");
+          listaResultados.innerHTML = ""; // Limpiar resultados anteriores
+
+          if (resultados.length > 0) {
+            resultados.forEach((categoria) => {
+              const li = document.createElement("li");
+              li.textContent = categoria;
+              listaResultados.appendChild(li);
+            });
+          } else {
+            listaResultados.innerHTML =
+              "<li>No se encontraron categorías.</li>";
+          }
+        });
+    </script>
+  </body>
+  <script></script>
+</html>

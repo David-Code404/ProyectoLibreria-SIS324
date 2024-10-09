@@ -65,3 +65,33 @@ app.listen(PORT, () => {
     console.log('\x1b[32m%s\x1b[0m', `Servidor Express corriendo en el puerto ${PORT}`);
     console.log('\x1b[32m%s\x1b[0m', `Para acceder a la aplicación, visita: http://localhost:${PORT}`);
 });
+
+
+app.get("/api/categorias", (req, res) => {
+    const nombre = req.query.nombre;
+    const sql = nombre ? 
+        "SELECT * FROM Categorias WHERE nombre LIKE ?" : 
+        "SELECT * FROM Categorias";
+
+    db.all(sql, [`%${nombre}%`], (err, rows) => {
+        if (err) {
+            res.status(500).json({ error: err.message });
+            return;
+        }
+        res.json(rows);
+    });
+});
+
+// Ruta para crear una nueva categoría
+app.post("/api/categorias", (req, res) => {
+    const { nombre } = req.body;
+    const sql = "INSERT INTO Categorias (nombre) VALUES (?)";
+
+    db.run(sql, [nombre], function(err) {
+        if (err) {
+            res.status(500).json({ error: err.message });
+            return;
+        }
+        res.status(201).json({ id: this.lastID, nombre });
+    });
+});

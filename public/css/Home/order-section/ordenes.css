@@ -1,0 +1,123 @@
+
+/* <!-------------------------------------------class="ordenes"-------------------------------------------------> */
+.ordenes {
+    height: 560px; /* Altura fija de la lista de órdenes */
+    width: auto; /* Ajusta el ancho según sea necesario */
+    overflow-y: auto; /* Agregar desplazamiento vertical si el contenido es demasiado largo */
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+
+.ordenes h3 {
+    margin-top: 10px; /* Espacio superior */
+    margin-bottom: 10px; /* Espacio inferior */
+}
+
+/* <!------------------class="lista-pedidos"-------------------> */
+/* Estilos para la lista de pedidos */
+.lista-pedidos {
+    list-style: none;
+    padding: 0;
+}
+
+/* <!-----------------class="pedido-item"---------------------> */
+.pedido-item {
+    list-style: none;
+    margin-bottom: 10px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* <!---------CANTIDAD--------> */
+.cantidad {
+    font-size: 18px;
+    margin: 0 10px;
+}
+
+/* <!---------BOTONES--------> */
+
+.pedido-item button {
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+
+
+
+/* <------BOTON : decrementar-----> */
+.decrementar-cantidad {
+    background-color: #4CAF50;
+}
+.decrementar-cantidad:hover {
+    background-color: #45a049;
+}
+
+
+
+
+
+
+/* <------BOTON : incrementar-----> */
+.incrementar-cantidad {
+    background-color: #4CAF50;
+}
+.incrementar-cantidad:hover {
+    background-color: #45a049;
+}
+
+
+
+
+
+/* <------BOTON : eliminar-pedido-----> */
+.eliminar-pedido {
+    background-color: #f44336;
+}
+.eliminar-pedido:hover {
+    background-color: #d32f2f;
+}
+/* <------ANIMACION----> */
+@keyframes disappear {
+    0% {
+    opacity: 1;
+    }
+    100% {
+    opacity: 0;
+    }
+}
+.eliminando {
+    animation: disappear 0.3s ease forwards;
+}
+
+
+
+
+
+/* <------NOMBRE Y PRECIO-----> */
+.nombre-producto{
+    font-size: 16px;
+    font-weight: 400; /* Peso de la fuente */
+}
+.precio {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Estilos para los espaciados */
+.pedido-item > * {
+    margin: 0 5px;
+}

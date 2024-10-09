@@ -1,0 +1,7 @@
+/* <!---------------------------------------------Configuración General-----------------------------------------------------> */
+body {
+    margin: 0; /* Eliminar el margen predeterminado */
+    padding: 0; /* Eliminar el relleno predeterminado */
+    font-family: 'Inter', sans-serif; /* Fuente predeterminada */
+    background-color: #eef5f5; /* Color de fondo general */
+}

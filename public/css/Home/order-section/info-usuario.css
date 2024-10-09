@@ -1,0 +1,41 @@
+
+/* <!-----------------------------------------class="info-usuario"----------------------------------------------> */
+.info-usuario {
+    display: flex; /* Mostrar como flexbox */
+    align-items: center; /* Alinear elementos verticalmente al centro */
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 3px;
+}
+
+/* Estilos para las iniciales del usuario */
+.iniciales-usuario {
+    width: 40px; /* Tamaño del círculo */
+    height: 40px; /* Tamaño del círculo */
+    border-radius: 50%; /* Hacer el elemento redondo */
+    background-color: #565b64; /* Color de fondo del círculo */
+    color: white; /* Color del texto */
+    font-size: 15px; /* Tamaño del texto */
+    font-weight: bold; /* Texto en negrita */
+    display: flex; /* Mostrar como contenedor flexible */
+    justify-content: center; /* Alinear contenido horizontalmente al centro */
+    align-items: center; /* Alinear contenido verticalmente al centro */
+    margin-right: 20px; /* Espacio a la derecha del círculo */
+    margin-left: 10px; /* Espacio a la izquierda del círculo */
+}
+
+.info-usuario img {
+    width: 20px; /* Tamaño de la imagen */
+    height: 20px; /* Tamaño de la imagen */
+    border-radius: 50%; /* Hacer la imagen redonda */
+    margin-right: 10px; /* Espacio a la derecha de la imagen */
+    margin-left: 10px; /* Espacio a la izquierda de la imagen */
+}
+
+/* Estilos CSS para los elementos de texto dentro del contenedor */
+#cargo-usuario,
+#nombre-usuario {
+    display: inline; /* Mostrar en línea */
+    font-weight: 500;
+}

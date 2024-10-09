@@ -1,0 +1,175 @@
+/* <!---------------------------------Estilos generales del menú---------------------------------> */
+.menu-bar {
+    background-color: #1b2131; /* Color de fondo */
+    height: 100%; /* 100% de la altura de la ventana */
+    width: 250px; /* Tamaño proporcional del menú */
+    position: fixed; /* Fijar el menú en la pantalla */
+    left: 0; /* Colocar el menú a la izquierda */
+    top: 0; /* Colocar el menú en la parte superior */
+    display: flex; /* Utilizar flexbox para el diseño */
+    flex-direction: column; /* Columnas para el diseño vertical */
+    justify-content: flex-start; /* Alinear elementos al principio */
+    padding: 10px 10px; /* Espaciado interno */
+    transition: width 0.5s ease; /* Transición suave para el cambio de ancho */
+}
+.menu-bar.minimized {
+    width: 70px; /* Ancho reducido cuando se minimiza la barra */
+}
+
+/* Estilos para ocultar el título cuando se minimiza la barra */
+.menu-bar.minimized .titulo {
+    display: none;
+}
+
+/* Estilos para ocultar los elementos <span> con la clase .nav-text cuando se minimiza la barra */
+.menu-bar.minimized .nav-text {
+    display: none;
+}
+
+/* Estilos para el botón de alternar barra lateral cuando la barra está minimizada */
+.menu-bar.minimized #toggle-sidebar-button {
+    right: -15px; /* Ajusta la posición del botón cuando la barra está minimizada */
+}
+
+
+
+
+/* <!-----------------------------------Estilos del encabezado----------------------------------> */
+.header-content {
+    color: white;
+    font-size: 24px;
+    display: flex;
+    flex-direction: row; /* Cambiar a disposición en fila */
+    align-items: center; /* Alinear elementos al centro verticalmente */
+    padding: 10px 0px; /* Espacio interno */
+    background-color: #333b52;
+    border-radius: 10px; /* Agregar bordes redondeados */
+}
+
+/* Estilos del logotipo */
+.logo {
+    font-weight: bold;
+    font-size: 23px;
+    border-radius: 10px; /* Agregar bordes redondeados */   
+    background-color: #6e46bc; /* Color de fondo morado */
+    color: white; /* Texto blanco */
+    padding: 10px 10px; /* Espacio interno */
+    margin-right: 20px; /* Margen derecho */
+    transition: transform 0.3s; /* Transición suave */
+    margin-left: 8px; /* Margen izquierdo */
+}
+.logo:hover {
+    transform: scale(1.1); /* Efecto de escala al pasar el mouse */
+}
+
+/* Estilos del título */
+.titulo {
+    display: flex; /* Utilizar flexbox para el diseño */
+    flex-direction: column; /* Columnas para el diseño vertical */
+    /*espaciado entre los elementos*/
+}
+
+.negocio{
+    font-size: 20px;
+    font-weight: bold;
+}
+.nombre {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: -5px; /* Levantar el segundo título */
+}
+
+/* Estilos del botón de alternar barra lateral */
+#toggle-sidebar-button {
+    position: absolute; /* Posición absoluta para mover al borde */
+    top: 27px; /* Espacio superior */
+    right: -20px; /* Mover fuera del menú */
+    background-color: #ffffff; /* Color de fondo */
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%; /* Hacer el botón circular */
+    transition: transform 0.5s; /* Transición suave */
+    /* imagen al centro */
+    display: flex;
+}
+
+#toggle-sidebar-button:hover {
+    transform: scale(1.1); /* Efecto de escala al pasar el mouse */
+}
+
+/* Estilos del botón de alternar barra lateral cuando la barra está minimizada */
+.menu-bar.minimized #toggle-sidebar-button {
+    transform: rotate(180deg); /* Girar 180 grados cuando la barra está minimizada */
+}
+
+
+
+
+
+
+
+
+/* <!-----------------------------------Estilos de la navegación----------------------------------> */
+
+.menu-navigation {
+    margin-top: 20px; /* Margen superior */
+}
+
+.menu-links {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Estilos de los enlaces de navegación */
+.nav-link {
+    margin-bottom: 10px;
+    /* eliminar el subrayado de los enlaces */
+    text-decoration: none;
+}
+.nav-link a {
+    text-decoration: none; /* Quitar adornos predeterminados de los enlaces */
+}
+
+
+/* Estilos de los enlaces de navegación */
+.link-content {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.2s; /* Transición de color de fondo */
+    border-radius: 7px; /* Esquinas redondeadas */
+}
+.link-content:hover {
+    background-color: #333b52; /* Cambio de color de fondo al pasar el mouse */
+}
+.link-content.active {
+    background-color: #573993; /* Color de fondo morado */
+    font-weight: bold; /* Cambiar el peso de la fuente para resaltar el texto */
+}
+
+
+
+
+
+
+/* Estilos para imágenes dentro de los enlaces */
+img.nav-logo {
+    max-width: 23px; /* Limitar el ancho de las imágenes */
+    /*color blanco*/
+}
+
+/* Estilos para los iconos de navegación */
+.nav-logo {
+    margin-left: 7px;
+}
+
+/* Estilos para el texto de navegación */
+.nav-text {
+    margin-left: 30px;
+    font-size: 17px;
+}
+
+

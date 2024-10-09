@@ -3,13 +3,16 @@ CREATE TABLE IF NOT EXISTS Usuarios (
     id_usuario INTEGER PRIMARY KEY AUTOINCREMENT,
     nombre TEXT NOT NULL,
     email TEXT NOT NULL,
-    tipo_usuario TEXT NOT NULL CHECK (tipo_usuario IN ('Administrador','Cajero','Mesero')),
+    tipo_usuario TEXT NOT NULL CHECK (tipo_usuario IN ('Administrador','Vendedor','Mesero')),
     pin TEXT NOT NULL,
     estado INTEGER NOT NULL CHECK (estado IN (0, 1))
 );
 
 
 
+
+
+--tabla categorias
 
 CREATE TABLE IF NOT EXISTS Categorias (
     id_categoria INTEGER PRIMARY KEY AUTOINCREMENT,

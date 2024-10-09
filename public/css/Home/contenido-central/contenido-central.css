@@ -1,0 +1,76 @@
+/* <!---------------------------------------------class="contenido-central"-----------------------------------------------------> */
+.contenido-central {
+    margin-left: 280px; /* Ancho de la barra de menú */
+    margin-right: 450px; /* Ancho del sector de la orden */
+    margin-top: 80px; /* Margen superior */
+    padding: 20px; /* Espaciado interno */
+    background-color: #d2d9ff; /* Color de fondo */
+    border-radius: 10px; /* Bordes redondeados */
+    height: calc(100vh - 120px); /* Altura fija del contenedor central */
+    overflow-y: auto; /* Agregar desplazamiento vertical si el contenido excede la altura */
+    transition: margin-left 0.5s ease; /* Transición suave para el cambio de margen izquierdo */
+}
+
+/*scrollbar*/
+.contenido-central::-webkit-scrollbar {
+    width: 10px; /* Ancho de la barra de desplazamiento */
+}
+
+/* Estilos para el riel de la barra de desplazamiento */
+.contenido-central::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color de fondo del riel */
+    border-radius: 5px; /* Borde redondeado */
+}
+
+/* Estilos para el pulgar (scrollbar) de la barra de desplazamiento */
+.contenido-central::-webkit-scrollbar-thumb {
+    background: #4db6ac; /* Color del pulgar */
+    border-radius: 10px; /* Borde redondeado */
+}
+
+/* Estilos para el pulgar (scrollbar) cuando se desplaza */
+.contenido-central::-webkit-scrollbar-thumb:hover {
+    background: #26a69a; /* Color del pulgar al pasar el cursor */
+}
+
+
+
+
+
+
+/* <!--------------------------------------class="contenido-seccion"--------------------------------------------> */
+.contenido-seccion {
+    display: none; /* Por defecto, ocultar todas las secciones */
+}
+
+
+/* <!-----------------------------------class="contenido-seccion oculto"------------------------------------------> */
+/* Estilos para la sección activa (visible) */
+.contenido-seccion:not(.oculto) {
+    display: block; /* Mostrar la sección activa */
+}
+
+
+
+
+
+
+/* <!------------------------------Título sección------------------------------> */
+.contenido-seccion h2 {
+    color: #333; /* Color del texto */
+    font-size: 24px; /* Tamaño de fuente */
+    margin: 0;
+}
+
+
+
+/* <!--------------------------Mensaje de bienvenida---------------------------> */
+.contenido-seccion p {
+    color: #666; /* Color del texto */
+    font-size: 16px; /* Tamaño de fuente */
+    line-height: 1.5; /* Altura de línea */
+    margin: 0;
+}
+
+
+
