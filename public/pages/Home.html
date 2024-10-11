@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="/css/Home/Home.css" />
     <!--Menu-bar-->
     <link rel="stylesheet" href="/css/Home/menu-bar.css" />
-
     <!--Contenido-central-->
     <link
       rel="stylesheet"
@@ -16,10 +15,33 @@
     />
     <link rel="stylesheet" href="/css/Home/contenido-central/inicio.css" />
     <link rel="stylesheet" href="/css/Home/contenido-central/categorias.css" />
-
     <!--Order-section-->
     <link rel="stylesheet" href="/css/Home/order-section/order-section.css" />
     <link rel="stylesheet" href="/css/Home/order-section/info-usuario.css" />
+    <style>
+      .productos-seccion {
+        margin-top: 20px;
+      }
+
+      .productos-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px; /* Espacio entre las imágenes */
+      }
+
+      .producto {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 10px;
+        width: 150px; /* Ancho de cada producto */
+        text-align: center;
+      }
+
+      .producto img {
+        max-width: 100%;
+        border-radius: 5px;
+      }
+    </style>
   </head>
 
   <body>
@@ -68,7 +90,6 @@
               </div>
             </a>
           </li>
-
           <li class="nav-link">
             <a href="#sesion" onclick="mostrarContenido('sesion')">
               <div class="link-content">
@@ -135,6 +156,14 @@
             <!-- Aquí se agregarán los resultados de búsqueda -->
           </ul>
         </div>
+
+        <!-- Sección de productos -->
+        <div id="productos" class="productos-seccion oculto">
+          <h3>Productos</h3>
+          <div class="productos-container">
+            <!-- Los productos se agregarán aquí dinámicamente -->
+          </div>
+        </div>
       </div>
 
       <!----------------------Contenido de Sesión-------------------------->
@@ -161,14 +190,15 @@
           event.preventDefault();
           const categoriaBuscada = event.target.categoria.value.toLowerCase();
           const listaCategorias = [
-            "libros de texto",
-            "útiles escolares",
-            "papelería",
-            "arte y manualidades",
-            "tecnología",
+            { nombre: "libros de texto", imagen: "/path/to/libros.jpg" },
+            { nombre: "útiles escolares", imagen: "/path/to/utiles.jpg" },
+            { nombre: "papelería", imagen: "/path/to/papeleria.jpg" },
+            { nombre: "arte y manualidades", imagen: "/path/to/arte.jpg" },
+            { nombre: "tecnología", imagen: "/path/to/tecnologia.jpg" },
           ];
+
           const resultados = listaCategorias.filter((categoria) =>
-            categoria.toLowerCase().includes(categoriaBuscada)
+            categoria.nombre.toLowerCase().includes(categoriaBuscada)
           );
 
           // Mostrar resultados
@@ -178,15 +208,29 @@
           if (resultados.length > 0) {
             resultados.forEach((categoria) => {
               const li = document.createElement("li");
-              li.textContent = categoria;
+              li.textContent = categoria.nombre;
               listaResultados.appendChild(li);
+
+              // Mostrar productos
+              const productosContainer = document.querySelector(".productos-container");
+              productosContainer.innerHTML = ""; // Limpiar productos anteriores
+
+              const productoDiv = document.createElement("div");
+              productoDiv.className = "producto";
+              productoDiv.innerHTML = `
+                <img src="${categoria.imagen}" alt="${categoria.nombre}" />
+                <p>${categoria.nombre}</p>
+              `;
+              productosContainer.appendChild(productoDiv);
             });
+            // Mostrar sección de productos
+            document.getElementById("productos").classList.remove("oculto");
           } else {
-            listaResultados.innerHTML =
-              "<li>No se encontraron categorías.</li>";
+            listaResultados.innerHTML = "<li>No se encontraron categorías.</li>";
+            // Ocultar sección de productos si no hay resultados
+            document.getElementById("productos").classList.add("oculto");
           }
         });
     </script>
   </body>
-  <script></script>
 </html>

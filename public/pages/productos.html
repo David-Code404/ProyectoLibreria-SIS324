@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productos - Librería Escolar</title>
+    <link rel="stylesheet" href="/css/Home/Home.css" />
+    <link rel="stylesheet" href="/css/Home/menu-bar.css" />
+    <link rel="stylesheet" href="/css/Home/contenido-central/contenido-central.css" />
+    <link rel="stylesheet" href="/css/Home/contenido-central/inicio.css" />
+    <link rel="stylesheet" href="/css/Home/contenido-central/categorias.css" />
+    <link rel="stylesheet" href="/css/Home/order-section/order-section.css" />
+    <link rel="stylesheet" href="/css/Home/order-section/info-usuario.css" />
+</head>
+
+<body>
+    <nav class="menu-bar">
+        <header>
+            <div class="header-content">
+                <div class="logo">LE</div>
+                <div class="titulo">
+                    <div class="negocio">Librería</div>
+                    <div class="nombre">Escolar</div>
+                </div>
+            </div>
+            <button id="toggle-sidebar-button">
+                <img src="/ico/toggle-sidebar-button.svg" alt="Icono Minimizar/Agrandar" />
+            </button>
+        </header>
+
+        <div class="menu-navigation">
+            <ul class="menu-links">
+                <li class="nav-link">
+                    <a href="home.html" onclick="mostrarContenido('inicio')">
+                        <div class="link-content">
+                            <img class="nav-logo" src="/ico/inicio.svg" alt="Icono de Inicio" />
+                            <span class="nav-text">Inicio</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-link">
+                    <a href="categorias.html" onclick="mostrarContenido('categorias')">
+                        <div class="link-content">
+                            <img class="nav-logo" src="/ico/categoria.jpg" alt="Icono de Categorías" />
+                            <span class="nav-text">Categorías</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-link">
+                    <a href="#sesion" onclick="mostrarContenido('sesion')">
+                        <div class="link-content">
+                            <img class="nav-logo" src="/ico/cesion.svg" alt="Icono de Sesión" />
+                            <span class="nav-text">Sesión</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="contenido-central">
+        <div id="productos" class="contenido-seccion">
+            <h2>Productos</h2>
+            <p>Aquí puedes ver los productos disponibles en la librería escolar.</p>
+
+            <!-- Productos de la categoría seleccionada -->
+            <ul id="lista-productos">
+                <!-- Los productos se agregarán aquí -->
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        async function mostrarProductos(id_categoria) {
+            try {
+                const response = await fetch(`/api/productos/${id_categoria}`); // Ajusta esta ruta según tu API
+                const productos = await response.json();
+                
+                const listaProductos = document.getElementById('lista-productos');
+                listaProductos.innerHTML = ''; // Limpiar resultados anteriores
+
+                if (productos.length > 0) {
+                    productos.forEach(producto => {
+                        const li = document.createElement('li');
+                        li.textContent = `${producto.nombre_producto} - $${producto.precio}`;
+                        listaProductos.appendChild(li);
+                    });
+                } else {
+                    listaProductos.innerHTML = '<li>No se encontraron productos en esta categoría.</li>';
+                }
+            } catch (error) {
+                console.error('Error al obtener los productos:', error);
+            }
+        }
+
+        // Esta función se puede llamar al cargar la página
+        // Aquí puedes pasar un ID de categoría para mostrar los productos automáticamente
+        // por ejemplo, mostrarProductos(1); // 1 es un ejemplo de ID de categoría
+    </script>
+</body>
+</html>

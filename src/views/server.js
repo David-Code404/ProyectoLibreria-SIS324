@@ -95,3 +95,11 @@ app.post("/api/categorias", (req, res) => {
         res.status(201).json({ id: this.lastID, nombre });
     });
 });
+
+
+
+// Asegúrate de que apiRouter esté incluido
+const apiRouter = require('../routes/api');
+
+// Middleware para manejar las rutas de la API
+app.use('/api', apiRouter);

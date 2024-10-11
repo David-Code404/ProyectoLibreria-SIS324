@@ -20,6 +20,13 @@ CREATE TABLE IF NOT EXISTS Categorias (
 );
 
 
+CREATE TABLE Productos (
+    id_producto INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT NOT NULL,
+    precio REAL NOT NULL,
+    id_categoria INTEGER,
+    FOREIGN KEY (id_categoria) REFERENCES Categorias (id_categoria)
+);
 
 
 
