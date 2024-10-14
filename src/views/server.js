@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
     if (req.device.type === 'phone' || req.device.type === 'tablet') {
         res.sendFile(path.join(__dirname, '..', '..', 'public', 'pages', 'mobile.html'));
     } else {
-        res.sendFile(path.join(__dirname, '..', '..', 'public', 'pages', 'home.html'));
+        res.sendFile(path.join(__dirname, '..', '..', 'public', 'pages', 'index.html'));
     }
 });
 
